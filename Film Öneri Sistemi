@@ -1,0 +1,15 @@
+filmler = pd.read_csv("C:/Users/emine/Desktop/movie_id_titles.csv")
+print(filmler)
+len(filmler)
+data['item_id'] = data['item_id'].astype(int)
+filmler.dtypes
+data = pd.merge(data, filmler, on="item_id")
+data.head()
+
+tablo = data.pivot_table(index = "user_id", columns = "title", values="rating")
+tablo.head()
+korelasyon
+kore = pd.DataFrame(korelasyon, columns=["Correlation"])
+kore.dropna(inplace=True)
+kore.head()
+kore.sort_values("Correlation").head(15)
